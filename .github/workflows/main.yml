@@ -38,8 +38,6 @@ jobs:
         with:
           image: ${{ env.IMAGE_NAME }}
           tags: ${{ env.IMAGE_TAGS }}
-          build-args:
-            PORT=4621
           dockerfiles: |
             ./Dockerfile
             
