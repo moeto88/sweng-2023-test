@@ -2,7 +2,7 @@ name: OpenShift
 
 env:
   APP_NAME: "sweng-2023-test"
-  APP_PORT: "4621"
+  APP_PORT: ""
   OPENSHIFT_NAMESPACE: "moeto88-dev"
   
 on:
