@@ -4,7 +4,7 @@ env:
   APP_NAME: "sweng-2023-test"
   APP_PORT: "4621"
   OPENSHIFT_NAMESPACE: "moeto88-dev"
-  
+
 on:
   workflow_run:
     workflows: ["Publish to Quay.io"]
@@ -14,7 +14,7 @@ on:
 jobs:   
   openshift-deploy:
     name: Deploy to OpenShift
-      # ubuntu-20.04 can also be used.
+      # ubuntu-20.04 can also be used
     runs-on: ubuntu-20.04
 
     outputs:
