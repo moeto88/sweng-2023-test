@@ -2,7 +2,7 @@ name: OpenShift
 
 env:
   APP_NAME: "sweng-2023-test"
-  APP_PORT: ${{ secrets.PORT }}
+  APP_PORT: "4621"
   OPENSHIFT_NAMESPACE: "moeto88-dev"
   
 on:
@@ -51,7 +51,7 @@ jobs:
     
     - name: Set environment
       run: |
-        oc set env deployment.apps/sweng-2023-test PORT=${{ secrets.PORT }}
+        oc set env deployment.apps/sweng-2023-test PORT=4621
     
     - name: Print application URL
       env:

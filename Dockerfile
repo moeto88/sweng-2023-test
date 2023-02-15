@@ -1,8 +1,5 @@
 FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1750
 
-ARG PORT=local
-ENV PORT ${PORT}
-
 WORKDIR /sweng-2023-test
 
 COPY . .
@@ -18,7 +15,7 @@ RUN npm install -global yarn
 RUN yarn install
 
 EXPOSE 5297
-EXPOSE ${PORT}
+EXPOSE 4621
 
 CMD ["/bin/bash"]
 # gunicorn app:app -b 0.0.0.0:5297 -w 8 -k uvicorn.workers.UvicornWorker & yarn dev
