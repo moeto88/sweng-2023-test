@@ -18,11 +18,7 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
       
-      - run: mkdir -p ./docs
-      - run: echo hello > ./docs
-
-      - name: "Upload"
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: ./docs
