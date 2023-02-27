@@ -18,4 +18,9 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
 
-      - run: ls
+      - uses: actions/download-artifact@v3
+        with:
+          name: qodana-report
+    
+      - name: Display structure of downloaded files
+        run: ls -R
