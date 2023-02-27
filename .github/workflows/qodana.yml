@@ -12,30 +12,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      
+          
       - name: 'Qodana Scan'
-        uses: JetBrains/qodana-action@v2022.3.2
-        with:
-          report-dir: docs
-      
-      - uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
-
-      - name: Deploy to GitHub Pages
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add docs
-          git commit -m "Qodana report"
-          git push
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: result
-          path: qodana
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: report
-          path: docs
+        uses: JetBrains/qodana-action@v2022.3.4
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
