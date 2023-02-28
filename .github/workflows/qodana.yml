@@ -24,7 +24,3 @@ jobs:
     
       - name: Display structure of downloaded files
         run: ls -R
-
-      - run: |
-          cd ./results/report
-          docker run --rm -p 8000:80 -v $(pwd):/usr/share/nginx/html nginx
