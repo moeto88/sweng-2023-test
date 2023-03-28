@@ -1,31 +1,21 @@
-import { Tile, Link, Tag } from '@carbon/react';
-import './card.scss';
+import { Tag } from '@carbon/react';
+import styles from './Card.module.scss';
 
-const CARD_IMG_URL = "http://www.redhat.com/architect/portfolio/repo/images/";
+import { CustomClickableTile, CustomLink } from './CustomCarbonNavigation';
+
+//const CARD_IMG_URL = "http://www.redhat.com/architect/portfolio/repo/images/";
 
 export default function Card({projectData}) {
-
-  if(!projectData.islive) return null;
-  
-  return (
-    <Tile className='tile'>
-      {/* <img src={CARD_IMG_URL + projectData.Image1Url} className='cardImage' /> */}
-      <Link size='lg' className='titleLink'>{projectData.Heading}</Link>
-      <p>{projectData.Summary}</p>
-      <div className='tags'>
-        { projectData.ProductType.split(",").map(typetag =>
-            <Tag type="red" title="Clear Filter" key={projectData.ppid + typetag}>{typetag}</Tag>
-        )}
-        { projectData.Solutions.split(",").map(solutiontag =>
-            <Tag type="magenta" title="Clear Filter" key={projectData.ppid + solutiontag}>{solutiontag}</Tag>
-        )}
-        { projectData.Vertical.split(",").map(verticaltag =>
-            <Tag type="warm-gray" title="Clear Filter" key={projectData.ppid + verticaltag} >{verticaltag}</Tag>
-        )}
-        { projectData.Product.split(",").map(producttag =>
-            <Tag type="cool-gray" title="Clear Filter" key={projectData.ppid + producttag}>{producttag}</Tag>
-        )}
-      </div>
-    </Tile>
-  );
+	return (
+		<CustomClickableTile className={styles.tile} href={`./details/${projectData.id}`} >
+			{/* <img src={CARD_IMG_URL + projectData.Image1Url} className='cardImage' /> */}
+			<CustomLink size='lg' className={styles.titleLink}>{projectData.title}</CustomLink>
+			<p>{projectData.description}</p>
+			<div className={styles.tags}>
+				{projectData.tags.map(tagItem => 
+					<Tag type='magenta' title='Clear Filter' key={tagItem.tagId}>{tagItem.tagName}</Tag>
+				)}
+			</div>
+		</CustomClickableTile>
+	);
 }

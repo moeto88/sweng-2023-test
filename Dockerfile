@@ -1,10 +1,10 @@
 FROM registry.access.redhat.com/ubi9/ubi:9.1.0-1750
 
-WORKDIR /sweng-2023-test
+WORKDIR /architecture-center-input-form
 
 COPY . .
 
-ENV PATH /sweng-2023-test:$PATH
+ENV PATH /architecture-center-input-form:$PATH
 # update 
 RUN yum -y update
 # get install script and pass it to execute: 
