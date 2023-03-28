@@ -45,7 +45,7 @@ jobs:
       uses: redhat-actions/oc-new-app@v1
       with:
         app_name: ${{ env.APP_NAME }}
-        image: quay.io/${{secrets.QUAY_IO_ACCOUNT_NAME}}/sweng-2023-test
+        image: quay.io/moeto88/sweng-2023-test
         namespace: moeto88-dev
         port: ${{ env.APP_PORT }}
     
