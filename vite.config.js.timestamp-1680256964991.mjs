@@ -1,0 +1,28 @@
+// vite.config.js
+import { defineConfig } from "file:///Users/SonodaMoeto/Desktop/Software%20Engineering/sweng-2023-test/node_modules/vite/dist/node/index.js";
+import react from "file:///Users/SonodaMoeto/Desktop/Software%20Engineering/sweng-2023-test/node_modules/@vitejs/plugin-react/dist/index.mjs";
+import { resolve } from "path";
+import eslint from "file:///Users/SonodaMoeto/Desktop/Software%20Engineering/sweng-2023-test/node_modules/vite-plugin-eslint/dist/index.mjs";
+var __vite_injected_original_dirname = "/Users/SonodaMoeto/Desktop/Software Engineering/sweng-2023-test";
+var vite_config_default = defineConfig({
+  plugins: [react(), eslint()],
+  resolve: {
+    alias: {
+      "@": resolve(__vite_injected_original_dirname, "src")
+    }
+  },
+  base: "./",
+  server: {
+    /* host = true allows forwarding an IP from the main namespace to another in docker container
+      https://stackoverflow.com/questions/70012970/running-a-vite-dev-server-inside-a-docker-container
+    */
+    host: true,
+    port: 4621,
+    open: false,
+    cors: true
+  }
+});
+export {
+  vite_config_default as default
+};
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsidml0ZS5jb25maWcuanMiXSwKICAic291cmNlc0NvbnRlbnQiOiBbImNvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9kaXJuYW1lID0gXCIvVXNlcnMvU29ub2RhTW9ldG8vRGVza3RvcC9Tb2Z0d2FyZSBFbmdpbmVlcmluZy9zd2VuZy0yMDIzLXRlc3RcIjtjb25zdCBfX3ZpdGVfaW5qZWN0ZWRfb3JpZ2luYWxfZmlsZW5hbWUgPSBcIi9Vc2Vycy9Tb25vZGFNb2V0by9EZXNrdG9wL1NvZnR3YXJlIEVuZ2luZWVyaW5nL3N3ZW5nLTIwMjMtdGVzdC92aXRlLmNvbmZpZy5qc1wiO2NvbnN0IF9fdml0ZV9pbmplY3RlZF9vcmlnaW5hbF9pbXBvcnRfbWV0YV91cmwgPSBcImZpbGU6Ly8vVXNlcnMvU29ub2RhTW9ldG8vRGVza3RvcC9Tb2Z0d2FyZSUyMEVuZ2luZWVyaW5nL3N3ZW5nLTIwMjMtdGVzdC92aXRlLmNvbmZpZy5qc1wiO2ltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gJ3ZpdGUnO1xuaW1wb3J0IHJlYWN0IGZyb20gJ0B2aXRlanMvcGx1Z2luLXJlYWN0JztcbmltcG9ydCB7IHJlc29sdmUgfSBmcm9tICdwYXRoJztcbmltcG9ydCBlc2xpbnQgZnJvbSAndml0ZS1wbHVnaW4tZXNsaW50JztcblxuLy8gaHR0cHM6Ly92aXRlanMuZGV2L2NvbmZpZy9cbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XG4gIHBsdWdpbnM6IFtyZWFjdCgpLCBlc2xpbnQoKV0sXG4gIHJlc29sdmU6IHtcbiAgICBhbGlhczoge1xuICAgICAgJ0AnOiByZXNvbHZlKF9fZGlybmFtZSwgJ3NyYycpLFxuICAgIH0sXG4gIH0sXG4gIGJhc2U6ICcuLycsXG4gIHNlcnZlcjoge1xuICAgIC8qIGhvc3QgPSB0cnVlIGFsbG93cyBmb3J3YXJkaW5nIGFuIElQIGZyb20gdGhlIG1haW4gbmFtZXNwYWNlIHRvIGFub3RoZXIgaW4gZG9ja2VyIGNvbnRhaW5lclxuICAgICAgaHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS9xdWVzdGlvbnMvNzAwMTI5NzAvcnVubmluZy1hLXZpdGUtZGV2LXNlcnZlci1pbnNpZGUtYS1kb2NrZXItY29udGFpbmVyXG4gICAgKi9cbiAgICBob3N0OiB0cnVlLFxuICAgIHBvcnQ6IDQ2MjEsXG4gICAgb3BlbjogZmFsc2UsXG4gICAgY29yczogdHJ1ZSxcbiAgfSxcbn0pO1xuIl0sCiAgIm1hcHBpbmdzIjogIjtBQUFpWCxTQUFTLG9CQUFvQjtBQUM5WSxPQUFPLFdBQVc7QUFDbEIsU0FBUyxlQUFlO0FBQ3hCLE9BQU8sWUFBWTtBQUhuQixJQUFNLG1DQUFtQztBQU16QyxJQUFPLHNCQUFRLGFBQWE7QUFBQSxFQUMxQixTQUFTLENBQUMsTUFBTSxHQUFHLE9BQU8sQ0FBQztBQUFBLEVBQzNCLFNBQVM7QUFBQSxJQUNQLE9BQU87QUFBQSxNQUNMLEtBQUssUUFBUSxrQ0FBVyxLQUFLO0FBQUEsSUFDL0I7QUFBQSxFQUNGO0FBQUEsRUFDQSxNQUFNO0FBQUEsRUFDTixRQUFRO0FBQUE7QUFBQTtBQUFBO0FBQUEsSUFJTixNQUFNO0FBQUEsSUFDTixNQUFNO0FBQUEsSUFDTixNQUFNO0FBQUEsSUFDTixNQUFNO0FBQUEsRUFDUjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
