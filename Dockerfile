@@ -8,7 +8,7 @@ ENV PATH /architecture-center-input-form:$PATH
 # update 
 RUN yum -y update
 # get install script and pass it to execute: 
-RUN yum install -y python3 python3-pip vim npm sqlite
+RUN yum install -y python3 python3-pip vim npm postgresql
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 RUN npm install -g npm@9.6.2
