@@ -51,7 +51,7 @@ jobs:
     
     - name: Set environment
       run: |
-        oc set env deployment.apps/sweng-2023-test POSTGRESQL_URL=${{ secrets.POSTGRESQL_URL }} PORT=4621 POSTGRESQL_PORT=5432
+        oc set env deployment.apps/sweng-2023-test POSTGRESQL_URL=${{ secrets.POSTGRESQL_URL }} PORT=4621 POSTGRESQL_PORT=5432 POSTGRES_USER=moeto
     
     - name: Print application URL
       env:
