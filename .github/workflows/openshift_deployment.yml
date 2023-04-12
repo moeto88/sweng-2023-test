@@ -48,11 +48,11 @@ jobs:
         app_name: ${{ env.APP_NAME }}
         image: quay.io/moeto88/sweng-2023-test
         namespace: moeto88-dev
-        port: ${{ env.BACKEND_PORT }}
+        port: ${{ env.FRONTEND_PORT }}
     
     - name: Set environment
       run: |
-        oc set env deployment.apps/sweng-2023-test FRONTEND_PORT=${{ env.FRONTEND_PORT }}
+        oc set env deployment.apps/sweng-2023-test PORT=${{ env.BACKEND_PORT }}
     
     - name: Print application URL
       env:
