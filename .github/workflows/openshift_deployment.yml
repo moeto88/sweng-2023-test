@@ -52,7 +52,7 @@ jobs:
     
     - name: Set environment
       run: |
-        oc set env deployment.apps/sweng-2023-test PORT=${{ env.BACKEND_PORT }}
+        oc set env deployment.apps/sweng-2023-test BACKEND_PORT=${{ env.BACKEND_PORT }} FRONTEND_PORT=${{ env.FRONTEND_PORT }}
     
     - name: Print application URL
       env:
