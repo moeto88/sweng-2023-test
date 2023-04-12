@@ -2,7 +2,7 @@ name: OpenShift
 
 env:
   APP_NAME: "sweng-2023-test"
-  APP_PORT: 4621
+  APP_PORT: 5297
   
 
 on:
@@ -51,7 +51,7 @@ jobs:
     
     - name: Set environment
       run: |
-        oc set env deployment.apps/sweng-2023-test POSTGRESQL_URL=${{ secrets.POSTGRESQL_URL }} PORT=4621 POSTGRESQL_PORT=5432 POSTGRESQL_USER=postgres POSTGRESQL_PASSWORD=0808 POSTGRESQL_DATABASE=test
+        oc set env deployment.apps/sweng-2023-test PORT=${{ env.APP_PORT }}
     
     - name: Print application URL
       env:
